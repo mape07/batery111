@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#040b07" />
-  <meta name="description" content="GreenVolt: diagnóstico, recarga y asistencia de baterías a domicilio en Bogotá. Atención rápida por WhatsApp, servicio profesional y cobertura urbana." />
+  <meta name="theme-color" content="#080808" />
+  <meta name="description" content="CyberVolt: diagnóstico, recarga y asistencia de baterías a domicilio en Bogotá. Atención rápida por WhatsApp, servicio profesional y cobertura urbana." />
   <meta name="keywords" content="baterías a domicilio Bogotá, recarga de batería, batería carro, asistencia vehicular, diagnóstico batería" />
-  <meta property="og:title" content="GreenVolt | Energía verde inmediata para tu vehículo" />
-  <meta property="og:description" content="Diagnóstico, recarga y asistencia de baterías a domicilio con una experiencia visual verde neón." />
+  <meta property="og:title" content="CyberVolt | Energía inmediata para tu vehículo" />
+  <meta property="og:description" content="Diagnóstico, recarga y asistencia de baterías a domicilio en Bogotá." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="es_CO" />
-  <title>GreenVolt | Baterías a domicilio en Bogotá</title>
+  <title>CyberVolt | Baterías a domicilio en Bogotá</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,20 +19,20 @@
 
   <style>
     :root {
-      --bg: #040b07;
-      --bg-soft: #07110b;
+      --bg: #080808;
+      --bg-soft: #0d0d0f;
       --panel: rgba(18, 18, 20, 0.78);
-      --panel-solid: #0a1710;
+      --panel-solid: #121214;
       --line: rgba(255,255,255,.10);
-      --line-green: rgba(52, 255, 123, .42);
-      --green-neon: #22e66f;
-      --green-2: #6dff9f;
-      --green-dark: #064d27;
+      --line-red: rgba(255, 35, 35, .42);
+      --red: #ff2323;
+      --red-2: #ff4b4b;
+      --red-dark: #760000;
       --white: #ffffff;
       --muted: #b8b8bd;
       --muted-2: #818187;
       --green: #25d366;
-      --shadow-green: 0 0 35px rgba(34,230,111,.32);
+      --shadow-red: 0 0 35px rgba(255,35,35,.30);
       --shadow-soft: 0 24px 80px rgba(0,0,0,.45);
       --radius: 24px;
       --radius-sm: 14px;
@@ -46,9 +46,9 @@
       font-family: "Inter", sans-serif;
       color: var(--white);
       background:
-        radial-gradient(circle at 15% 20%, rgba(34,230,111,.12), transparent 28%),
-        radial-gradient(circle at 82% 16%, rgba(109,255,159,.08), transparent 26%),
-        linear-gradient(180deg, #030805 0%, #06100a 45%, #040a06 100%);
+        radial-gradient(circle at 15% 20%, rgba(255,35,35,.10), transparent 28%),
+        radial-gradient(circle at 82% 16%, rgba(255,35,35,.07), transparent 26%),
+        linear-gradient(180deg, #060606 0%, #0a0a0c 45%, #070707 100%);
       min-height: 100vh;
       overflow-x: hidden;
     }
@@ -66,44 +66,6 @@
       mask-image: linear-gradient(to bottom, rgba(0,0,0,.9), transparent 92%);
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      inset: -35%;
-      z-index: -3;
-      pointer-events: none;
-      background:
-        conic-gradient(from 20deg at 50% 50%, transparent 0 18%, rgba(34,230,111,.14) 24%, transparent 32% 58%, rgba(109,255,159,.10) 66%, transparent 74%),
-        radial-gradient(circle at 50% 50%, rgba(34,230,111,.08), transparent 56%);
-      filter: blur(45px);
-      animation: greenAurora 18s linear infinite;
-      transform-origin: center;
-    }
-
-    @keyframes greenAurora {
-      0% { transform: rotate(0deg) scale(1); }
-      50% { transform: rotate(180deg) scale(1.12); }
-      100% { transform: rotate(360deg) scale(1); }
-    }
-
-    .energy-orb {
-      position: fixed;
-      width: 360px;
-      height: 360px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(109,255,159,.16), rgba(34,230,111,.04) 45%, transparent 70%);
-      filter: blur(10px);
-      z-index: -1;
-      pointer-events: none;
-      animation: orbFloat 12s ease-in-out infinite alternate;
-    }
-    .energy-orb.one { top: 8%; left: -120px; }
-    .energy-orb.two { right: -130px; bottom: 6%; animation-delay: -5s; }
-    @keyframes orbFloat {
-      from { transform: translate3d(0,0,0) scale(.9); }
-      to { transform: translate3d(80px,55px,0) scale(1.15); }
-    }
-
     a { color: inherit; }
     img { max-width: 100%; display: block; }
     button, input, select { font: inherit; }
@@ -114,21 +76,21 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      color: var(--green-2);
+      color: var(--red-2);
       font-size: .78rem;
       font-weight: 800;
       letter-spacing: .16em;
       text-transform: uppercase;
       margin-bottom: 14px;
     }
-    .eyebrow::before { content:""; width: 28px; height: 2px; background: var(--green-neon); box-shadow: 0 0 16px var(--green-neon); }
+    .eyebrow::before { content:""; width: 28px; height: 2px; background: var(--red); box-shadow: 0 0 16px var(--red); }
     .title {
       font-family: "Orbitron", sans-serif;
       font-size: clamp(2rem, 4vw, 3.5rem);
       line-height: 1.08;
       letter-spacing: -.03em;
     }
-    .title span { color: var(--green-2); text-shadow: 0 0 28px rgba(34,230,111,.45); }
+    .title span { color: var(--red-2); text-shadow: 0 0 28px rgba(255,35,35,.45); }
     .lead { margin-top: 18px; color: var(--muted); font-size: 1.05rem; line-height: 1.8; max-width: 700px; }
 
     /* PRELOADER */
@@ -138,7 +100,7 @@
       z-index: 99999;
       display: grid;
       place-items: center;
-      background: #020704;
+      background: #050505;
       transition: opacity .7s ease, visibility .7s ease;
     }
     #preloader.hide { opacity: 0; visibility: hidden; }
@@ -147,11 +109,11 @@
       width: 78px;
       height: 120px;
       margin: 0 auto 22px;
-      border: 3px solid var(--green-neon);
+      border: 3px solid var(--red);
       border-radius: 12px;
       padding: 7px;
       position: relative;
-      box-shadow: var(--shadow-green);
+      box-shadow: var(--shadow-red);
     }
     .battery-loader::before {
       content:"";
@@ -161,7 +123,7 @@
       transform:translateX(-50%);
       width:28px;
       height:9px;
-      background:var(--green-neon);
+      background:var(--red);
       border-radius:4px 4px 0 0;
     }
     .battery-fill {
@@ -170,14 +132,14 @@
       right:7px;
       bottom:7px;
       height:0;
-      background:linear-gradient(180deg,var(--green-2),var(--green-neon));
+      background:linear-gradient(180deg,var(--red-2),var(--red));
       border-radius:6px;
-      box-shadow:0 0 30px rgba(34,230,111,.72);
+      box-shadow:0 0 30px rgba(255,35,35,.7);
       animation:charge 1.7s ease forwards;
     }
     @keyframes charge { to { height:calc(100% - 14px); } }
     .loader-name { font-family:"Orbitron"; font-weight:900; letter-spacing:.18em; }
-    .loader-name span { color:var(--green-neon); }
+    .loader-name span { color:var(--red); }
 
     /* NAV */
     .nav-wrap {
@@ -203,16 +165,16 @@
       border-radius:14px;
       display:grid;
       place-items:center;
-      background:linear-gradient(145deg,#10251a,#040b07);
-      border:1px solid var(--line-green);
-      color:var(--green-2);
-      box-shadow:var(--shadow-green);
+      background:linear-gradient(145deg,#1b1b1d,#080808);
+      border:1px solid var(--line-red);
+      color:var(--red-2);
+      box-shadow:var(--shadow-red);
     }
-    .brand span { color:var(--green-2); }
+    .brand span { color:var(--red-2); }
     .nav-links { display:flex; align-items:center; gap:4px; list-style:none; }
     .nav-links a { text-decoration:none; color:#d2d2d6; font-size:.9rem; font-weight:700; padding:10px 13px; border-radius:10px; transition:.2s ease; }
     .nav-links a:hover { color:#fff; background:rgba(255,255,255,.06); }
-    .nav-cta { background:var(--green-neon)!important; color:#fff!important; box-shadow:0 0 24px rgba(34,230,111,.30); }
+    .nav-cta { background:var(--red)!important; color:#fff!important; box-shadow:0 0 24px rgba(255,35,35,.28); }
     .menu-btn { display:none; width:46px; height:46px; border-radius:12px; border:1px solid var(--line); background:#111; color:#fff; cursor:pointer; }
 
     /* HERO */
@@ -225,7 +187,7 @@
       right:-160px;
       top:100px;
       border-radius:50%;
-      background:radial-gradient(circle,rgba(34,230,111,.16),transparent 67%);
+      background:radial-gradient(circle,rgba(255,35,35,.14),transparent 67%);
       filter:blur(12px);
       z-index:-1;
     }
@@ -251,7 +213,7 @@
       letter-spacing:-.055em;
       max-width:780px;
     }
-    .hero h1 span { color:var(--green-2); text-shadow:0 0 42px rgba(34,230,111,.45); }
+    .hero h1 span { color:var(--red-2); text-shadow:0 0 42px rgba(255,35,35,.45); }
     .hero-copy { color:var(--muted); font-size:1.08rem; line-height:1.8; margin:24px 0 28px; max-width:640px; }
     .hero-actions { display:flex; gap:12px; flex-wrap:wrap; }
     .btn {
@@ -269,18 +231,18 @@
       cursor:pointer;
     }
     .btn:hover { transform:translateY(-3px); }
-    .btn-primary { background:linear-gradient(135deg,var(--green-2),var(--green-neon)); color:#fff; box-shadow:0 14px 38px rgba(34,230,111,.27); }
-    .btn-primary:hover { box-shadow:0 18px 50px rgba(34,230,111,.38); }
+    .btn-primary { background:linear-gradient(135deg,var(--red-2),var(--red)); color:#fff; box-shadow:0 14px 38px rgba(255,35,35,.27); }
+    .btn-primary:hover { box-shadow:0 18px 50px rgba(255,35,35,.38); }
     .btn-secondary { background:rgba(255,255,255,.045); border-color:var(--line); color:#fff; }
     .hero-trust { display:flex; gap:20px; flex-wrap:wrap; margin-top:24px; color:#d1d1d5; font-size:.9rem; }
     .hero-trust span { display:flex; align-items:center; gap:8px; }
-    .hero-trust i { color:var(--green-2); }
+    .hero-trust i { color:var(--red-2); }
 
     .hero-visual { position:relative; min-height:560px; display:grid; place-items:center; }
     .energy-orbit {
       position:absolute;
       inset:10%;
-      border:1px solid rgba(34,230,111,.26);
+      border:1px solid rgba(255,35,35,.26);
       border-radius:50%;
       animation:spin 16s linear infinite;
     }
@@ -290,8 +252,8 @@
       width:12px;
       height:12px;
       border-radius:50%;
-      background:var(--green-2);
-      box-shadow:0 0 25px var(--green-neon);
+      background:var(--red-2);
+      box-shadow:0 0 25px var(--red);
     }
     .energy-orbit::before { top:-6px; left:50%; }
     .energy-orbit::after { bottom:-6px; left:24%; }
@@ -305,10 +267,10 @@
       place-items:center;
       overflow:hidden;
       background:
-        radial-gradient(circle at 50% 55%,rgba(34,230,111,.25),transparent 32%),
+        radial-gradient(circle at 50% 55%,rgba(255,35,35,.25),transparent 32%),
         linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.01));
       border:1px solid var(--line);
-      box-shadow:var(--shadow-soft),inset 0 0 80px rgba(109,255,159,.08);
+      box-shadow:var(--shadow-soft),inset 0 0 80px rgba(255,35,35,.07);
     }
     .battery-scene::before {
       content:"";
@@ -325,7 +287,7 @@
       border-radius:26px;
       background:linear-gradient(145deg,#202024 0%,#09090a 55%,#151517 100%);
       border:2px solid rgba(255,255,255,.11);
-      box-shadow:0 38px 60px rgba(0,0,0,.55), 0 0 70px rgba(34,230,111,.20), inset 0 0 35px rgba(255,255,255,.03);
+      box-shadow:0 38px 60px rgba(0,0,0,.55), 0 0 70px rgba(255,35,35,.20), inset 0 0 35px rgba(255,255,255,.03);
       position:relative;
       transform:perspective(900px) rotateY(-12deg) rotateX(8deg);
       animation:float 4s ease-in-out infinite;
@@ -347,7 +309,7 @@
       position:absolute;
       inset:42px 25px 28px;
       border-radius:16px;
-      background:linear-gradient(180deg,#0a1710,#080809);
+      background:linear-gradient(180deg,#121214,#080809);
       border:1px solid rgba(255,255,255,.08);
       display:flex;
       flex-direction:column;
@@ -355,11 +317,11 @@
       justify-content:center;
       gap:12px;
     }
-    .battery-bolt { color:var(--green-2); font-size:5rem; filter:drop-shadow(0 0 22px rgba(34,230,111,.85)); }
+    .battery-bolt { color:var(--red-2); font-size:5rem; filter:drop-shadow(0 0 22px rgba(255,35,35,.85)); }
     .battery-logo { font-family:"Orbitron"; font-weight:900; letter-spacing:.1em; font-size:1.15rem; }
-    .battery-logo span { color:var(--green-2); }
+    .battery-logo span { color:var(--red-2); }
     .battery-tag { font-size:.68rem; letter-spacing:.2em; color:var(--muted-2); }
-    .spark { position:absolute; width:3px; height:105px; background:linear-gradient(transparent,#fff,var(--green-neon),transparent); filter:drop-shadow(0 0 8px var(--green-neon)); opacity:.9; animation:spark 1.2s infinite ease-in-out; }
+    .spark { position:absolute; width:3px; height:105px; background:linear-gradient(transparent,#fff,var(--red),transparent); filter:drop-shadow(0 0 8px var(--red)); opacity:.9; animation:spark 1.2s infinite ease-in-out; }
     .s1 { left:18%; top:20%; transform:rotate(35deg); }
     .s2 { right:18%; bottom:18%; transform:rotate(-25deg); animation-delay:.4s; }
     @keyframes spark { 0%,100%{opacity:.1;scale:.7} 50%{opacity:1;scale:1.08} }
@@ -376,7 +338,7 @@
       gap:12px;
       align-items:center;
     }
-    .floating-card i { color:var(--green-2); font-size:1.25rem; }
+    .floating-card i { color:var(--red-2); font-size:1.25rem; }
     .floating-card b { display:block; font-size:.86rem; }
     .floating-card small { color:var(--muted-2); }
     .fc1 { left:-16px; top:88px; }
@@ -404,7 +366,7 @@
       padding:0 14px;
       outline:none;
     }
-    .quick-form input:focus,.quick-form select:focus { border-color:var(--green-neon); box-shadow:0 0 0 3px rgba(34,230,111,.14); }
+    .quick-form input:focus,.quick-form select:focus { border-color:var(--red); box-shadow:0 0 0 3px rgba(255,35,35,.12); }
     .quick-form button { min-height:50px; }
 
     /* STATS */
@@ -429,17 +391,17 @@
       box-shadow:0 18px 50px rgba(0,0,0,.18);
       transition:.28s ease;
     }
-    .card::after { content:""; position:absolute; inset:auto -30% -55% auto; width:220px; height:220px; border-radius:50%; background:rgba(34,230,111,.14); filter:blur(35px); }
-    .card:hover { transform:translateY(-8px); border-color:var(--line-green); box-shadow:var(--shadow-green); }
-    .card-icon { width:56px; height:56px; border-radius:16px; display:grid; place-items:center; color:var(--green-2); background:rgba(34,230,111,.12); border:1px solid var(--line-green); font-size:1.3rem; margin-bottom:22px; }
+    .card::after { content:""; position:absolute; inset:auto -30% -55% auto; width:220px; height:220px; border-radius:50%; background:rgba(255,35,35,.12); filter:blur(35px); }
+    .card:hover { transform:translateY(-8px); border-color:var(--line-red); box-shadow:var(--shadow-red); }
+    .card-icon { width:56px; height:56px; border-radius:16px; display:grid; place-items:center; color:var(--red-2); background:rgba(255,35,35,.10); border:1px solid var(--line-red); font-size:1.3rem; margin-bottom:22px; }
     .card h3 { font-family:"Orbitron"; font-size:1.05rem; margin-bottom:12px; }
     .card p { color:var(--muted); line-height:1.75; font-size:.94rem; }
-    .card a { display:inline-flex; margin-top:20px; gap:8px; align-items:center; text-decoration:none; color:var(--green-2); font-weight:800; font-size:.9rem; }
+    .card a { display:inline-flex; margin-top:20px; gap:8px; align-items:center; text-decoration:none; color:var(--red-2); font-weight:800; font-size:.9rem; }
 
     /* STEPS */
     .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; position:relative; }
     .step { padding:30px; border:1px solid var(--line); background:rgba(255,255,255,.035); border-radius:var(--radius); }
-    .step-num { font-family:"Orbitron"; font-size:3rem; font-weight:900; color:rgba(34,230,111,.22); margin-bottom:12px; }
+    .step-num { font-family:"Orbitron"; font-size:3rem; font-weight:900; color:rgba(255,35,35,.22); margin-bottom:12px; }
     .step h3 { font-family:"Orbitron"; font-size:1rem; margin-bottom:10px; }
     .step p { color:var(--muted); line-height:1.7; }
 
@@ -450,7 +412,7 @@
       border-radius:32px;
       border:1px solid var(--line);
       background:
-        radial-gradient(circle at 44% 44%,rgba(34,230,111,.20),transparent 18%),
+        radial-gradient(circle at 44% 44%,rgba(255,35,35,.20),transparent 18%),
         linear-gradient(135deg,rgba(255,255,255,.045),rgba(255,255,255,.015));
       position:relative;
       overflow:hidden;
@@ -470,15 +432,15 @@
       transform:rotate(-7deg);
     }
     .map-center { position:absolute; inset:0; display:grid; place-items:center; text-align:center; z-index:2; }
-    .map-center i { font-size:4rem; color:var(--green-2); filter:drop-shadow(0 0 30px rgba(34,230,111,.6)); }
+    .map-center i { font-size:4rem; color:var(--red-2); filter:drop-shadow(0 0 30px rgba(255,35,35,.6)); }
     .map-center strong { display:block; font-family:"Orbitron"; margin-top:12px; font-size:1.35rem; }
     .map-center span { color:var(--muted); }
-    .map-pin { position:absolute; width:12px; height:12px; border-radius:50%; background:var(--green-2); box-shadow:0 0 0 8px rgba(34,230,111,.14),0 0 25px var(--green-neon); z-index:2; animation:pin 2s infinite; }
-    @keyframes pin { 50%{ box-shadow:0 0 0 15px rgba(34,230,111,0),0 0 25px var(--green-neon); } }
+    .map-pin { position:absolute; width:12px; height:12px; border-radius:50%; background:var(--red-2); box-shadow:0 0 0 8px rgba(255,35,35,.12),0 0 25px var(--red); z-index:2; animation:pin 2s infinite; }
+    @keyframes pin { 50%{ box-shadow:0 0 0 15px rgba(255,35,35,0),0 0 25px var(--red); } }
     .p1{left:24%;top:27%}.p2{right:24%;top:30%}.p3{left:34%;bottom:25%}.p4{right:34%;bottom:20%}
     .zone-list { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:24px; }
     .zone { padding:13px 15px; border-radius:12px; background:rgba(255,255,255,.04); border:1px solid var(--line); color:#dedee2; display:flex; align-items:center; gap:9px; }
-    .zone i { color:var(--green-2); }
+    .zone i { color:var(--red-2); }
 
     /* TESTIMONIALS */
     .testimonials { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
@@ -486,7 +448,7 @@
     .stars { color:#ffcc4d; letter-spacing:2px; margin-bottom:16px; }
     .quote p { color:var(--muted); line-height:1.75; }
     .person { display:flex; gap:12px; align-items:center; margin-top:20px; }
-    .avatar { width:42px; height:42px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,#2a2a2f,#111); border:1px solid var(--line); color:var(--green-2); }
+    .avatar { width:42px; height:42px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg,#2a2a2f,#111); border:1px solid var(--line); color:var(--red-2); }
     .person small { display:block; color:var(--muted-2); }
 
     /* FAQ */
@@ -494,7 +456,7 @@
     details { border-bottom:1px solid var(--line); }
     summary { list-style:none; cursor:pointer; padding:22px 0; font-weight:800; display:flex; justify-content:space-between; gap:16px; }
     summary::-webkit-details-marker { display:none; }
-    summary::after { content:"+"; color:var(--green-2); font-size:1.4rem; }
+    summary::after { content:"+"; color:var(--red-2); font-size:1.4rem; }
     details[open] summary::after { content:"–"; }
     details p { color:var(--muted); line-height:1.75; padding:0 0 22px; }
 
@@ -504,11 +466,11 @@
       overflow:hidden;
       padding:56px;
       border-radius:34px;
-      border:1px solid var(--line-green);
+      border:1px solid var(--line-red);
       background:
-        radial-gradient(circle at 85% 40%,rgba(34,230,111,.22),transparent 30%),
+        radial-gradient(circle at 85% 40%,rgba(255,35,35,.22),transparent 30%),
         linear-gradient(135deg,#171719,#0b0b0c);
-      box-shadow:var(--shadow-green);
+      box-shadow:var(--shadow-red);
       display:flex;
       justify-content:space-between;
       align-items:center;
@@ -596,8 +558,6 @@
   </style>
 </head>
 <body>
-  <div class="energy-orb one" aria-hidden="true"></div>
-  <div class="energy-orb two" aria-hidden="true"></div>
   <div id="preloader" aria-hidden="true">
     <div class="loader-box">
       <div class="battery-loader"><div class="battery-fill"></div></div>
@@ -607,7 +567,7 @@
 
   <header class="nav-wrap" id="header">
     <div class="container nav">
-      <a class="brand" href="#inicio" aria-label="GreenVolt inicio">
+      <a class="brand" href="#inicio" aria-label="CyberVolt inicio">
         <span class="brand-mark"><i class="fa-solid fa-bolt"></i></span>
         CYBER<span>VOLT</span>
       </a>
@@ -618,7 +578,7 @@
         <li><a href="#cobertura">Cobertura</a></li>
         <li><a href="#opiniones">Opiniones</a></li>
         <li><a href="#preguntas">Preguntas</a></li>
-        <li><a class="nav-cta" href="https://wa.me/573001234567?text=Hola%20GreenVolt,%20necesito%20asistencia%20para%20mi%20batería" target="_blank" rel="noopener">Solicitar servicio</a></li>
+        <li><a class="nav-cta" href="https://wa.me/573171534659?text=Hola%20CyberVolt,%20necesito%20asistencia%20para%20mi%20batería" target="_blank" rel="noopener">Solicitar servicio</a></li>
       </ul>
     </div>
   </header>
@@ -631,7 +591,7 @@
           <h1>DEVOLVEMOS LA <span>ENERGÍA</span> A TU VEHÍCULO</h1>
           <p class="hero-copy">Diagnóstico, recarga y asistencia de baterías a domicilio. Llegamos hasta donde estés con atención rápida, equipos profesionales y acompañamiento directo por WhatsApp.</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/573001234567?text=Hola%20GreenVolt,%20necesito%20asistencia%20para%20mi%20batería" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Necesito ayuda ahora</a>
+            <a class="btn btn-primary" href="https://wa.me/573171534659?text=Hola%20CyberVolt,%20necesito%20asistencia%20para%20mi%20batería" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Necesito ayuda ahora</a>
             <a class="btn btn-secondary" href="#servicios"><i class="fa-solid fa-arrow-down"></i> Ver servicios</a>
           </div>
           <div class="hero-trust">
@@ -731,7 +691,7 @@
             <div class="zone"><i class="fa-solid fa-circle-check"></i> Bosa</div>
             <div class="zone"><i class="fa-solid fa-circle-check"></i> Barrios Unidos</div>
           </div>
-          <a class="btn btn-primary" style="margin-top:24px" href="https://wa.me/573001234567?text=Hola,%20quiero%20confirmar%20cobertura%20en%20mi%20zona" target="_blank" rel="noopener"><i class="fa-solid fa-location-crosshairs"></i> Confirmar cobertura</a>
+          <a class="btn btn-primary" style="margin-top:24px" href="https://wa.me/573171534659?text=Hola,%20quiero%20confirmar%20cobertura%20en%20mi%20zona" target="_blank" rel="noopener"><i class="fa-solid fa-location-crosshairs"></i> Confirmar cobertura</a>
         </div>
       </div>
     </section>
@@ -767,7 +727,7 @@
       <div class="container">
         <div class="cta-box reveal">
           <div><h2>¿TU VEHÍCULO NO ENCIENDE?</h2><p>Escríbenos ahora y recibe orientación para coordinar la atención.</p></div>
-          <a class="btn btn-primary" href="https://wa.me/573001234567?text=Hola%20GreenVolt,%20mi%20vehículo%20no%20enciende" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Hablar con un asesor</a>
+          <a class="btn btn-primary" href="https://wa.me/573171534659?text=Hola%20CyberVolt,%20mi%20vehículo%20no%20enciende" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Hablar con un asesor</a>
         </div>
       </div>
     </section>
@@ -781,11 +741,11 @@
         <div class="footer-col"><h4>INFORMACIÓN</h4><a href="#proceso">Cómo funciona</a><a href="#cobertura">Cobertura</a><a href="#preguntas">Preguntas frecuentes</a></div>
         <div class="footer-col"><h4>CONTACTO</h4><p><i class="fa-brands fa-whatsapp"></i> +57 300 123 4567</p><p><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</p><p><i class="fa-solid fa-clock"></i> Horario por confirmar</p></div>
       </div>
-      <div class="footer-bottom"><span>© <span id="year"></span> GreenVolt. Todos los derechos reservados.</span><span>Diseño enfocado en conversión y experiencia móvil.</span></div>
+      <div class="footer-bottom"><span>© <span id="year"></span> CyberVolt. Todos los derechos reservados.</span><span>Diseño enfocado en conversión y experiencia móvil.</span></div>
     </div>
   </footer>
 
-  <a class="whatsapp-float" href="https://wa.me/573001234567?text=Hola%20GreenVolt,%20necesito%20asistencia" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>Ayuda inmediata</span></a>
+  <a class="whatsapp-float" href="https://wa.me/573171534659?text=Hola%20CyberVolt,%20necesito%20asistencia" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp"><i class="fa-brands fa-whatsapp"></i><span>Ayuda inmediata</span></a>
 
   <script>
     const PHONE = "573001234567"; // Reemplaza por tu número real con código de país, sin + ni espacios.
@@ -809,7 +769,7 @@
       e.preventDefault();
       const vehicle = document.getElementById('vehicle').value.trim();
       const problem = document.getElementById('problem').value;
-      const message = `Hola GreenVolt, necesito una cotización.%0A%0AVehículo: ${encodeURIComponent(vehicle)}%0AProblema: ${encodeURIComponent(problem)}`;
+      const message = `Hola CyberVolt, necesito una cotización.%0A%0AVehículo: ${encodeURIComponent(vehicle)}%0AProblema: ${encodeURIComponent(problem)}`;
       window.open(`https://wa.me/${PHONE}?text=${message}`, '_blank', 'noopener');
     });
 
@@ -845,5 +805,7 @@
 
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+</body>
+</html>
 </body>
 </html>
